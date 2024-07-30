@@ -17,9 +17,9 @@ addpath fcns fcns_MPC
 %% --- parameters ---
 % ---- gait ----
 % 0-trot; 1-bound; 2-pacing 3-gallop; 4-trot run; 5-crawl
-gait = 1; 
+gait = 5; 
 p = get_params(gait);
-p.playSpeed =1;
+p.playSpeed = 10;
 p.flag_movie = 1;       % 1 - make movie
 
 dt_sim = p.simTimeStep;
@@ -28,8 +28,8 @@ MAX_ITER = floor(SimTimeDuration/p.simTimeStep);
 
 % desired trajectory
 p.acc_d = 1;
-p.vel_d = [0.5;0];
-p.yaw_d = 0;
+p.vel_d = [0.5;0.2];
+p.yaw_d = pi/4;
 
 %% Model Predictive Control
 % --- initial condition ---
